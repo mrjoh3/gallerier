@@ -1,43 +1,54 @@
 
 
 library(shiny)
+library(shinythemes)
+library(dplyr)
+library(hashids)
+
 source('src/lightbox.R')
 
+images <<- data.frame(src = list.files('www/img')) %>%
+  tidyr::separate(col = 'src', c('txt', 'date', 'time', 'msec'), sep = '_|\\.', remove = FALSE) %>%
+  rowwise() %>%
+  mutate(date = lubridate::ymd(date),
+         key = hashids::encode(1e3 + as.integer(msec), hashid_settings(salt = 'this is my salt')))
+
 # Define UI for application that draws a histogram
-ui <- fluidPage(
+ui <- fluidPage(theme = shinytheme("superhero"),
    
    # Application title
-   titlePanel("Shiny Image Galleries"),
+    titlePanel(withTags(
+      div("Shiny Image Galleries",
+          div(class = 'pull-right',
+              a(href = 'https://github.com/mrjoh3/shiny-gallery-example',
+                icon('github'))), hr() )
+    ), 
+    windowTitle = "Shiny Image Galleries"
+    ),
    
-   # Sidebar with a slider input for number of bins 
-   sidebarLayout(
-      sidebarPanel(
-         
-      ),
-      
-      # Show a plot of the generated distribution
-      mainPanel(
-        tabPanel('Lightbox',
-                 
-                 fluidRow(
-                   column(12, h2('Image Availability'),
-                          uiOutput('lightbox')
-                   ))
-                 
+    tabsetPanel(
+          tabPanel('Lightbox',
+                   fluidRow(
+                     column(12, 
+                            uiOutput('lb')
+                     ))
+                                     
+          ),
+          tabPanel('PhotoSwipe',
+                   fluidRow(
+                     column(12
+                     ))
+          )
         )
       )
-   )
-)
 
 # Define server logic required to draw a histogram
 server <- function(input, output) {
    
-  output$lightbox <- renderUI({
-
-    images <- data.frame()
+  output$lb <- renderUI({
     
     # gallery DIV
-    lightbox_gallery(images, display = TRUE)
+    lightbox_gallery(images, 'gallery', display = TRUE)
     
   })
 
