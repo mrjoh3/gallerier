@@ -6,6 +6,7 @@ library(dplyr)
 library(hashids)
 
 source('src/lightbox.R')
+source('src/photoswipe.R')
 
 images <<- data.frame(src = list.files('www/img')) %>%
   tidyr::separate(col = 'src', c('txt', 'date', 'time', 'msec'), sep = '_|\\.', remove = FALSE) %>%
@@ -36,7 +37,8 @@ ui <- fluidPage(theme = shinytheme("superhero"),
           ),
           tabPanel('PhotoSwipe',
                    fluidRow(
-                     column(12
+                     column(12,
+                            uiOutput('ps')
                      ))
           )
         )
@@ -48,7 +50,14 @@ server <- function(input, output) {
   output$lb <- renderUI({
     
     # gallery DIV
-    lightbox_gallery(images, 'gallery', display = TRUE)
+    lightbox_gallery(images[sample(1:nrow(images), 12, replace = FALSE),], 'gallery', display = TRUE)
+    
+  })
+  
+  output$ps <- renderUI({
+    
+    # gallery DIV
+    photoswipe_gallery(images[sample(1:nrow(images), 12, replace = FALSE),], 'ps-gallery', display = TRUE)
     
   })
 

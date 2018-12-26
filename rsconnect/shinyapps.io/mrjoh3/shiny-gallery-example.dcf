@@ -1,0 +1,12 @@
+name: shiny-gallery-example
+title: shiny-gallery-example
+username:
+account: mrjoh3
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 623330
+bundleId: 1783426
+url: https://mrjoh3.shinyapps.io/shiny-gallery-example/
+when: 1545807059.6153
+asMultiple: FALSE
+asStatic: FALSE

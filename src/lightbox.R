@@ -3,7 +3,7 @@ lightbox_gallery <- function(df, gallery, display = 'block'){
   
   tags$div(style = sprintf('display: %s;', display),
            tagList(tags$head(
-                     tags$link(rel = "stylesheet", type = "text/css", href = "lightbox.min.css"),
+                     tags$link(rel = "stylesheet", type = "text/css", href = "lightbox-2.10.0/lightbox.min.css"),
                      tags$link(rel = "stylesheet", type = "text/css", href = "styles.css")
                    ),
                    tags$div(class = 'card-deck',
@@ -20,7 +20,7 @@ lightbox_gallery <- function(df, gallery, display = 'block'){
                                        )
                             })
                    ),
-                   includeScript("www/lightbox.min.js")
+                   includeScript("www/lightbox-2.10.0/lightbox.min.js")
            ))
   
 }
