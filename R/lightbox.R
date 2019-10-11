@@ -4,16 +4,19 @@
 #' @param df data.frame containing
 #' @param gallery character label identifying gallery
 #' @param css character file path to css file. If missing default style is used
+#' @param width integer thumbnail image size in pixels
 #' @param display character 
 #'
 #' @importFrom shiny tags includeScript includeCSS
+#' @importFrom glue glue glue_collapse
+#' @importFrom digest sha1
 #' @importFrom fs dir_copy
 #' 
 #' @return
 #' @export
 #'
 #' @examples
-lightbox_gallery <- function(df, gallery, css, display = 'block'){
+lightbox_gallery <- function(df, gallery, css, width = 80, display = 'block'){
   
   dir.create('www')
   
