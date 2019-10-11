@@ -4,7 +4,7 @@
 \alias{lightbox_gallery}
 \title{Create Lightbox Gallery}
 \usage{
-lightbox_gallery(df, gallery, css, display = "block")
+lightbox_gallery(df, gallery, css, width = 80, display = "block")
 }
 \arguments{
 \item{df}{data.frame containing}
@@ -12,6 +12,8 @@ lightbox_gallery(df, gallery, css, display = "block")
 \item{gallery}{character label identifying gallery}
 
 \item{css}{character file path to css file. If missing default style is used}
+
+\item{width}{integer thumbnail image size in pixels}
 
 \item{display}{character}
 }
