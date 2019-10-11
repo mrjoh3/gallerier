@@ -1,12 +1,22 @@
 
-photoswipe_gallery <- function(df, gallery, display = 'block'){
+photoswipe_gallery <- function(df, gallery, css, display = 'block'){
+  
+  dir.create('www')
+  
+  if (missing(css)) {
+    css <- file.path(system.file('css', package = 'gallerier'), 
+                     "styles.css")
+  }
+  if (!(dir.exists('www/lightbox-2.10.0'))) {
+    fs::dir_copy(system.file('js/photoswipe-4.1.2', package = 'gallerier'), 
+                 'www/photoswipe-4.1.2')
+  }
   
   tags$div(style = sprintf('display: %s;', display),
            tagList(
              tags$head(
                tags$link(rel = "stylesheet", type = "text/css", href = "photoswipe-4.1.2/photoswipe.css"),
                tags$link(rel = "stylesheet", type = "text/css", href = "photoswipe-4.1.2/default-skin/default-skin.css"),
-               tags$link(rel = "stylesheet", type = "text/css", href = "styles.css"),
                tags$script(src = 'photoswipe-4.1.2/photoswipe.min.js'),
                tags$script(src = 'photoswipe-4.1.2/photoswipe-ui-default.min.js')
            ),
