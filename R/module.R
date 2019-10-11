@@ -53,7 +53,7 @@ gallery <- function(input, output, session, images, gallery = c('lightbox', 'pho
       tidyr::separate(col = 'src', c('txt', 'date', 'time', 'msec'), sep = '_|\\.', remove = FALSE) %>%
       rowwise() %>%
       mutate(date = lubridate::ymd(date),
-             key = hashids::encode(1e3 + as.integer(msec), hashid_settings(salt = 'this is my salt')))
+             uid = strtrim(digest::sha1(src), 5))
   }
   
   # render gallery
