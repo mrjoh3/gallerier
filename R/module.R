@@ -22,7 +22,7 @@ galleryUI <- function(id, label = "Image Gallery") {
 
 
 
-#' Gallery Module Server
+#' @title Gallery Module Server
 #'
 #' @param input 
 #' @param output 
