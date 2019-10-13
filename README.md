@@ -4,8 +4,11 @@
 [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
 <!-- badges: end -->
 
-The goal of gallerier is to ...
+The goal of gallerier is to provide a simple way to include image galleries in Shiny Applications. Initialy this was just a [repository](https://github.com/mrjoh3/shiny-gallery-example) with some example code. Simple `lightbox` and `photoswipe` galleries are available as functions and shiny modules. Evample applications can be found in the `inst` folder  and a live version is available on [shinyapps](https://mrjoh3.shinyapps.io/shiny-gallery-example/).
 
+The package is under heavy development. The `lightbox` gallery is fully functional but `photoswipe` does not yet work as expected. 
+
+ 
 ## Installation
 
 You can install the latest version of gallerier from [Github](https://github.com/mrjoh3/gallerier) with:
