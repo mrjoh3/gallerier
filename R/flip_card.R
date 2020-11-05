@@ -1,6 +1,8 @@
 
 
 #' @title Generate a Single Flip Card
+#' 
+#' @description HTML and CSS flip card, based on example at https://www.w3schools.com/howto/howto_css_flip_card.asp
 #'
 #' @param title character card title
 #' @param subheading character card subheading
