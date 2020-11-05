@@ -4,8 +4,14 @@
 \alias{gallery}
 \title{Gallery Module Server}
 \usage{
-gallery(input, output, session, images, gallery = c("lightbox",
-  "photoswipe"), ...)
+gallery(
+  input,
+  output,
+  session,
+  images,
+  gallery = c("lightbox", "photoswipe"),
+  ...
+)
 }
 \arguments{
 \item{input}{}
@@ -19,6 +25,9 @@ gallery(input, output, session, images, gallery = c("lightbox",
 \item{gallery}{}
 
 \item{...}{}
+}
+\value{
+
 }
 \description{
 Gallery Module Server

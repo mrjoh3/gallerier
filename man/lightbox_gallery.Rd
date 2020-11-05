@@ -17,6 +17,9 @@ lightbox_gallery(df, gallery, css, width = 80, display = "block")
 
 \item{display}{character}
 }
+\value{
+
+}
 \description{
 Create Lightbox Gallery
 }

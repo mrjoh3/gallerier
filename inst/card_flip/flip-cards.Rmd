@@ -1,0 +1,61 @@
+---
+title: "Create a Flip-card Gallery"
+date: "`r Sys.Date()`"
+output: 
+  html_document:
+    mathjax: null
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  echo = FALSE,
+  message = FALSE,
+  warnings = FALSE,
+  comment = "#>"
+)
+```
+
+
+## A single Card
+
+```{r get started, eval=FALSE,echo=TRUE}
+
+card(title = 'My New Card', 
+     description = 'Simple generation of a flipable card', 
+     img = 'IMG_20181013_115420_886.jpg')
+
+```
+
+
+## Get some Image Data
+
+```{r images}
+
+library(gallerier)
+library(purrr)
+library(dplyr)
+library(glue)
+
+files <- list.files('../shiny/www/img', full.names = TRUE, )
+
+file_data <- map_dfr(files, ~ get_exif(.))
+
+```
+
+
+## Multiple Cards
+
+```{r}
+
+
+
+df <- file_data %>%
+  mutate(img = glue('../shiny/www/img/{`File Name`}'),
+         title = `File Name`,
+         description = glue('Name: {`File Name`}<br>File Size: {`File Size`}<br>Image Size: {`Image Size`}'))
+
+cards_grid(df, width = '200px')
+
+```
+

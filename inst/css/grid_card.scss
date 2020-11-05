@@ -1,0 +1,19 @@
+
+
+.cards {
+ 
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax($width, 1fr));
+grid-auto-rows: auto;
+grid-gap: 1rem;
+ 
+}
+
+ 
+.flip-card {
+ 
+border: 2px solid #e7e7e7;
+padding: .5rem;
+ 
+}
+
