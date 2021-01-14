@@ -73,13 +73,13 @@ card <- function(title,
   if (is.null(front)){
     front <- div(class="flip-card-front",
                  img(src = img, alt = img_alt, style=glue("width:{opts$width};")),
-                 h1(title),
-                 span(subheading))
+                 h1(HTML(title)),
+                 span(HTML(subheading)))
   }
   
   if (is.null(back)){
     back <- div(class="flip-card-back",
-                p(description))
+                p(HTML(description)))
   }
   
   div(class="flip-card",
