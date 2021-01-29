@@ -64,7 +64,7 @@ cards_grid <- function(df,
   
   cards <- df %>%
       split(.$id) %>%
-      map(~ card(.$title, description = .$description, img = .$img, id = id, width = width, height = height))
+      map(~ card(.$title, description = .$description, img = .$img, id = id, width = width, height = height, ...))
   
   
   div(class = 'cards',
