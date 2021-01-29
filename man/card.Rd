@@ -44,5 +44,5 @@ allows for muliple configurations on a single page}
 
 }
 \description{
-Generate a Single Flip Card
+HTML and CSS flip card, based on example at https://www.w3schools.com/howto/howto_css_flip_card.asp
 }

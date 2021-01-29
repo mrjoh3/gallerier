@@ -38,8 +38,10 @@ card <- function(title,
   defaults <- list(width = '300px',
                    height = '400px',
                    rotate = glue('rotate{flip_axis}(180deg)'),
-                   bg_front = '#bbb',
-                   bg_back = 'dodgerblue')
+                   bg_front = 'blue',
+                   bg_back = 'darkgrey')
+  
+  #print(as.list(...))
   
   opts <- modifyList(defaults,
                      list(...)) 
