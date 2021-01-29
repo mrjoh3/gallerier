@@ -77,10 +77,12 @@ card <- function(title,
   #htmltools::htmlDependencies(sas)
   
   if (is.null(front)){
-    front <- div(class="flip-card-front",
+    front <- div(class="flip-card-front", style = 'display: flex; flex-direction: column; justify-content: space-between;',
                  img(src = img, alt = img_alt, style=glue("width:{opts$width};")),
-                 h1(HTML(title)),
-                 span(HTML(subheading)))
+                 div(style = 'align-self: flex-end; width: 100%;',
+                   h1(HTML(title)),
+                   span(HTML(subheading)))
+                 )
   }
   
   if (is.null(back)){
