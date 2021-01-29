@@ -38,7 +38,7 @@ card <- function(title,
   defaults <- list(width = '300px',
                    height = '400px',
                    rotate = glue('rotate{flip_axis}(180deg)'),
-                   bg_front = 'blue',
+                   bg_front = '#0080ff',
                    bg_back = 'darkgrey',
                    colour_front = 'white',
                    colour_back = 'white')
