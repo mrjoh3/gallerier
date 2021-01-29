@@ -37,7 +37,9 @@ card <- function(title,
   
   defaults <- list(width = '300px',
                    height = '400px',
-                   rotate = glue('rotate{flip_axis}(180deg)'))
+                   rotate = glue('rotate{flip_axis}(180deg)'),
+                   bg_front = '#bbb',
+                   bg_back = 'dodgerblue')
   
   opts <- modifyList(defaults,
                      list(...)) 
@@ -56,7 +58,9 @@ card <- function(title,
       #defaults = NULL,
       declarations = list("width" = opts$width,
                           "height" = opts$height,
-                          "flip" = opts$rotate),
+                          "flip" = opts$rotate,
+                          "bg_front" = opts$bg_front,
+                          "bg_back" = opts$bg_back),
       rules = sass_file(css_template)
     )
     
