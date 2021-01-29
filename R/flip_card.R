@@ -39,7 +39,9 @@ card <- function(title,
                    height = '400px',
                    rotate = glue('rotate{flip_axis}(180deg)'),
                    bg_front = 'blue',
-                   bg_back = 'darkgrey')
+                   bg_back = 'darkgrey',
+                   colour_front = 'white',
+                   colour_back = 'white')
   
   #print(as.list(...))
   
@@ -62,7 +64,9 @@ card <- function(title,
                           "height" = opts$height,
                           "flip" = opts$rotate,
                           "bg_front" = opts$bg_front,
-                          "bg_back" = opts$bg_back),
+                          "bg_back" = opts$bg_back,
+                          "colour_front" = opts$colour_front,
+                          "colour_back" = opts$colour_back),
       rules = sass_file(css_template)
     )
     

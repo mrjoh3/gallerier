@@ -42,7 +42,7 @@
 /* Style the front side (fallback if image is missing) */
 .flip-card-front {
   background-color: $bg_front;
-  color: black;
+  color: $colour_front;
 }
 
 .flip-card-front h1 {
@@ -52,6 +52,6 @@
 /* Style the back side */
 .flip-card-back {
   background-color: $bg_back;
-  color: white;
+  color: $colour_back;
   transform: $flip;
 }
